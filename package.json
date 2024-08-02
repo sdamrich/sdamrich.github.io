@@ -1,0 +1,14 @@
+{
+  "name": "damrich-site",
+  "version": "1.0.0",
+  "description": "Personal Site of Damrich",
+  "private": true,
+  "scripts": {
+    "start": "serve ./src",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "serve": "^14.2.3"
+  }
+}

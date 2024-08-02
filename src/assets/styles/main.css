@@ -1,0 +1,84 @@
+@import url("../fonts/lora/lora.css");
+@import url("../fonts/inter/inter.css");
+@import url("./colors.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  --content-max-width: 60rem;
+  --content-padding: 2rem;
+  color: var(--text-color);
+  font-family: Inter, sans-serif;
+}
+
+a {
+  color: var(--color-c);
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--color-c-1);
+}
+
+.hero-banner {
+  border-bottom: 0.2em solid var(--color-a-alt);
+  background: radial-gradient(
+      ellipse at bottom,
+      var(--color-a-alt),
+      var(--color-a)
+    ),
+    var(--color-a);
+  font-family: Lora, serif;
+}
+.hero-banner .inner {
+  display: grid;
+  grid-template-areas:
+    "portrait name"
+    "portrait intro"
+    "portrait links"
+    "portrait .";
+  column-gap: 1em;
+  justify-content: center;
+  align-content: center;
+  position: relative;
+  padding: var(--content-padding);
+  padding-bottom: 0;
+  margin: 0 auto;
+  max-width: var(--content-max-width);
+}
+.hero-banner .portrait {
+  grid-area: portrait;
+  height: 18em;
+}
+.hero-banner .name {
+  grid-area: name;
+  font-size: 3em;
+  font-weight: normal;
+  margin-top: 1em;
+}
+.hero-banner .intro {
+  grid-area: intro;
+  margin: 0.5em 0;
+  font-size: 1.2em;
+}
+.hero-banner .links {
+  display: flex;
+  gap: 0.5em;
+  grid-area: links;
+  list-style: none;
+  margin-top: 0.5em;
+}
+.hero-banner .links li a {
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.hero-banner .links li a:hover {
+  opacity: 1;
+}
+.hero-banner .links li img {
+  width: 1.4em;
+  height: 1.4em;
+}
