@@ -195,19 +195,27 @@ a.highlight:hover {
   grid-area: nav;
   padding: 0 var(--content-padding);
   border-left: 0.1em solid var(--color-a-alt);
+  line-height: 1.2;
   background: var(--page-background);
 }
 .main-content .side-nav ul {
   list-style: square;
+}
+.main-content .side-nav ul li {
+  margin: 0.5em 0;
 }
 .main-content .inner {
   padding: var(--content-padding);
   grid-area: content;
 }
 .main-content .inner h2 {
-  /* Hack for # urls */
+  /* Hack for main navigation not to cover titles for # urls */
   padding-top: 3rem;
   margin-top: -3rem;
+}
+.main-content .inner ul,
+.main-content .inner ol {
+  margin-left: 2em;
 }
 .main-content .inner p {
   margin: 1.5em 0;
@@ -225,6 +233,41 @@ a.highlight:hover {
   height: 0.1em;
   background-color: var(--color-a-alt);
   z-index: -1;
+}
+
+.publications-list li {
+  display: grid;
+  position: relative;
+  grid-template-areas:
+    "title title"
+    "authors year";
+  grid-template-columns: 1fr auto;
+  margin: 0.5em 0;
+}
+.publications-list li::before {
+  content: "•";
+  position: absolute;
+  top: 0;
+  left: -1em;
+  line-height: 1.2;
+}
+.publications-list li .title {
+  grid-area: title;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.publications-list li a.title:hover {
+  text-decoration: underline;
+}
+.publications-list li .authors {
+  grid-area: authors;
+  font-style: italic;
+  font-family: Lara, serif;
+}
+.publications-list li .year {
+  grid-area: year;
+  font-family: Lara, serif;
 }
 
 .main-footer {
