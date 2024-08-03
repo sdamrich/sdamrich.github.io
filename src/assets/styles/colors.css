@@ -7,5 +7,7 @@
   --color-c: rgb(62, 97, 204);
   --color-c-darker: rgb(52, 59, 149);
   --text-color: rgb(51, 51, 51);
+  --text-color-alt: rgb(0, 0, 0);
   --background-color: rgb(237, 244, 243);
+  --background-color-alt: rgb(225, 235, 235);
 }
