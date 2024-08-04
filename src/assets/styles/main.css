@@ -35,6 +35,9 @@ h6 {
   font-family: Lora, serif;
   color: var(--text-color-alt);
 }
+h1 {
+  font-size: 2em;
+}
 h2 {
   font-size: 1.8em;
   font-weight: normal;
@@ -102,11 +105,8 @@ a.highlight:hover {
 
 .hero-banner {
   border-bottom: 0.2em solid var(--color-a-alt);
-  background: radial-gradient(
-    ellipse at bottom,
-    var(--color-a-alt),
-    var(--color-a)
-  );
+  background: linear-gradient(to bottom, var(--color-a), transparent 1em),
+    radial-gradient(ellipse at bottom, var(--color-a-alt), var(--color-a));
   font-family: Lora, serif;
 }
 .hero-banner .inner {
@@ -177,10 +177,13 @@ a.highlight:hover {
   padding: var(--content-padding);
   grid-area: content;
 }
+.main-content .inner h1 {
+  margin-bottom: 1em;
+}
 .main-content .inner h2 {
   /* Hack for main navigation not to cover titles for # urls */
-  padding-top: 4.5rem;
-  margin-top: -4.5rem;
+  padding-top: 3.5rem;
+  margin-top: -3.5rem;
 }
 .main-content .inner h3 {
   margin: 0.5em 0;
