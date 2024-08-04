@@ -20,11 +20,17 @@ html {
       var(--background-color-alt)
     )
     fixed;
+  min-width: 320px;
   min-height: 100dvh;
   background: var(--page-background);
   color: var(--text-color);
   font-family: Inter, sans-serif;
   line-height: 1.5;
+}
+@media (max-width: 767px) {
+  html {
+    --content-padding: 1rem;
+  }
 }
 
 body {
@@ -48,6 +54,12 @@ h1 {
 h2 {
   font-size: 1.8em;
   font-weight: normal;
+}
+@media (max-width: 767px) {
+  h1,
+  h2 {
+    font-size: 1.7em;
+  }
 }
 
 a {
@@ -73,19 +85,25 @@ a.highlight:hover {
   backdrop-filter: blur(1rem);
   z-index: 1;
 }
+@media (max-width: 767px) {
+  .main-nav {
+    font-size: 0.8em;
+  }
+}
 .main-nav .inner {
   display: flex;
   align-items: center;
   justify-content: safe center;
   padding: 0 var(--content-padding);
   margin: 0 auto;
-  max-width: var(--content-max-width);
+  width: var(--content-max-width);
+  max-width: 100%;
   list-style: none;
-  line-height: 2.5;
+  line-height: 2.5rem;
 }
 .main-nav .icon img {
   display: block;
-  height: 1.8rem;
+  height: 1.8em;
   border-radius: 50%;
   margin-right: 0.5em;
   background-color: var(--color-a-lighter);
@@ -118,27 +136,50 @@ a.highlight:hover {
 }
 .hero-banner .inner {
   display: grid;
-  grid-template-areas:
-    "portrait ."
-    "portrait name"
-    "portrait intro"
-    "portrait links"
-    "portrait .";
-  column-gap: 1em;
-  justify-content: safe center;
-  align-content: center;
   position: relative;
-  padding: var(--content-padding);
-  padding-top: 1.5rem;
-  padding-bottom: 0;
+  padding: 0 var(--content-padding);
   margin: 0 auto;
-  max-width: var(--content-max-width);
+  width: var(--content-max-width);
+  max-width: 100%;
+}
+@media (max-width: 767px) {
+  .hero-banner .inner {
+    grid-template-areas:
+      "name"
+      "intro"
+      "links"
+      "portrait";
+    font-size: 0.9em;
+  }
+}
+@media (min-width: 768px) {
+  .hero-banner .inner {
+    grid-template-areas:
+      "portrait ."
+      "portrait name"
+      "portrait intro"
+      "portrait links"
+      "portrait .";
+    column-gap: 1em;
+    justify-content: safe center;
+    align-content: center;
+  }
 }
 .hero-banner .portrait {
   grid-area: portrait;
   align-self: end;
-  margin: 0 2.5em;
   max-height: 18em;
+}
+@media (max-width: 767px) {
+  .hero-banner .portrait {
+    justify-self: center;
+    height: 12em;
+  }
+}
+@media (min-width: 768px) {
+  .hero-banner .portrait {
+    margin: 0 2.5em;
+  }
 }
 .hero-banner .name {
   grid-area: name;
@@ -155,25 +196,55 @@ a.highlight:hover {
 .hero-banner .button-links {
   padding-bottom: var(--content-padding);
 }
+@media (max-width: 767px) {
+  .hero-banner .button-links {
+    justify-content: safe center;
+  }
+}
 
 .main-content {
   display: grid;
   flex: 1;
-  grid-template-areas:
-    "content nav"
-    "content .";
-  grid-template-columns: 1fr 30%;
-  margin: 0 auto;
-  max-width: var(--content-max-width);
+}
+@media (max-width: 767px) {
+  .main-content {
+    grid-template-areas:
+      "nav"
+      "content";
+    grid-template-rows: auto 1fr;
+  }
+}
+@media (min-width: 768px) {
+  .main-content {
+    grid-template-areas:
+      "content nav"
+      "content .";
+    grid-template-columns: 1fr 30%;
+    margin: 0 auto;
+    width: var(--content-max-width);
+    max-width: 100%;
+  }
 }
 .main-content .side-nav {
-  position: sticky;
-  top: 4.5rem;
   grid-area: nav;
   padding: 0 var(--content-padding);
-  border-left: 0.1em solid var(--color-a-alt);
   line-height: 1.2;
-  background: var(--page-background);
+}
+@media (max-width: 767px) {
+  .main-content .side-nav {
+    padding: var(--content-padding);
+    padding-left: 2.5em;
+    background: var(--color-a-lighter);
+    font-size: 0.9em;
+  }
+}
+@media (min-width: 768px) {
+  .main-content .side-nav {
+    position: sticky;
+    top: 4.5rem;
+    border-left: 0.1em solid var(--color-a-alt);
+    background: var(--page-background);
+  }
 }
 .main-content .side-nav ul {
   list-style: square;
