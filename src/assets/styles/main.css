@@ -20,10 +20,17 @@ html {
       var(--background-color-alt)
     )
     fixed;
+  min-height: 100dvh;
   background: var(--page-background);
   color: var(--text-color);
   font-family: Inter, sans-serif;
   line-height: 1.5;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
 }
 
 h1,
@@ -151,6 +158,7 @@ a.highlight:hover {
 
 .main-content {
   display: grid;
+  flex: 1;
   grid-template-areas:
     "content nav"
     "content .";
@@ -291,9 +299,10 @@ a.highlight:hover {
 }
 
 .main-footer {
+  background: url("../img/footer-bg.png") right top no-repeat;
   clear: both;
   text-align: center;
-  margin: 2em 0;
+  padding: 2em 0;
   opacity: 0.7;
 }
 .main-footer * {
