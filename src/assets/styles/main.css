@@ -12,18 +12,14 @@ html {
   --content-max-width: 60rem;
   --content-padding: 2rem;
   --page-background: linear-gradient(
-        to bottom,
-        var(--color-a),
-        var(--color-a) 2.5rem,
-        transparent 2.5rem
-      )
-      fixed,
-    linear-gradient(
-        to top,
-        var(--background-color-alt),
-        var(--background-color)
-      )
-      fixed;
+      to bottom,
+      var(--color-a),
+      var(--color-a) 2.5rem,
+      var(--background-color) 2.5rem,
+      var(--background-color) 70%,
+      var(--background-color-alt)
+    )
+    fixed;
   background: var(--page-background);
   color: var(--text-color);
   font-family: Inter, sans-serif;
@@ -107,11 +103,10 @@ a.highlight:hover {
 .hero-banner {
   border-bottom: 0.2em solid var(--color-a-alt);
   background: radial-gradient(
-      ellipse at bottom,
-      var(--color-a-alt),
-      var(--color-a)
-    ),
-    var(--color-a);
+    ellipse at bottom,
+    var(--color-a-alt),
+    var(--color-a)
+  );
   font-family: Lora, serif;
 }
 .hero-banner .inner {
@@ -141,7 +136,7 @@ a.highlight:hover {
 .hero-banner .name {
   grid-area: name;
   padding-top: var(--content-padding);
-  font-size: 3em;
+  font-size: 2.5em;
   font-weight: normal;
   line-height: 1;
 }
@@ -150,34 +145,8 @@ a.highlight:hover {
   margin: 0.8em 0;
   font-size: 1.2em;
 }
-.hero-banner .links {
-  display: flex;
-  gap: 0.5em;
-  grid-area: links;
-  list-style: none;
+.hero-banner .button-links {
   padding-bottom: var(--content-padding);
-}
-.hero-banner .links li a {
-  display: block;
-  border-radius: 50%;
-  padding: 0.4em;
-  background-color: var(--color-a-lighter);
-}
-.hero-banner .links li a img {
-  display: block;
-  width: 24px;
-  height: 24px;
-  opacity: 0.7;
-  transition: opacity 0.2s;
-}
-.hero-banner .links li a:hover img {
-  opacity: 1;
-}
-.hero-banner .links li.highlight a {
-  background-color: var(--color-b);
-}
-.hero-banner .links li.highlight a img {
-  filter: invert(100%);
 }
 
 .main-content {
@@ -210,15 +179,20 @@ a.highlight:hover {
 }
 .main-content .inner h2 {
   /* Hack for main navigation not to cover titles for # urls */
-  padding-top: 3rem;
-  margin-top: -3rem;
+  padding-top: 4.5rem;
+  margin-top: -4.5rem;
+}
+.main-content .inner h3 {
+  margin: 0.5em 0;
+}
+.main-content .inner p,
+.main-content .inner > ul,
+.main-content .inner > ol {
+  margin: 1em 0;
 }
 .main-content .inner ul,
 .main-content .inner ol {
   margin-left: 2em;
-}
-.main-content .inner p {
-  margin: 1.5em 0;
 }
 .main-content .inner hr {
   height: 0.1em;
@@ -235,39 +209,82 @@ a.highlight:hover {
   z-index: -1;
 }
 
-.publications-list li {
+.button-links {
+  --_button-color: var(--button-color, var(--color-a-lighter));
+  --_button-gap: var(--button-gap, 0.5em);
+  --_button-icon-size: var(--button-icon-size, 24px);
+  display: flex;
+  gap: var(--_button-gap);
+  grid-area: links;
+  list-style: none;
+}
+.button-links li a {
+  display: block;
+  border-radius: 50%;
+  padding: 0.4em;
+  background-color: var(--_button-color);
+}
+.button-links li a img {
+  display: block;
+  width: var(--_button-icon-size);
+  height: var(--_button-icon-size);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.button-links li a:hover img {
+  opacity: 1;
+}
+.button-links li.highlight a {
+  background-color: var(--color-b);
+}
+.button-links li.highlight a img {
+  filter: invert(100%);
+}
+
+.publications-list {
+  line-height: 1.2;
+}
+.publications-list > li {
   display: grid;
   position: relative;
   grid-template-areas:
     "title title"
-    "authors year";
+    "authors links"
+    "periodical links";
   grid-template-columns: 1fr auto;
+  row-gap: 0.2em;
+  column-gap: 1em;
   margin: 0.5em 0;
 }
-.publications-list li::before {
+.publications-list > li::before {
   content: "•";
   position: absolute;
   top: 0;
   left: -1em;
-  line-height: 1.2;
 }
-.publications-list li .title {
+.publications-list > li .title {
   grid-area: title;
-  text-decoration: none;
   font-weight: bold;
-  line-height: 1.2;
 }
-.publications-list li a.title:hover {
-  text-decoration: underline;
+.publications-list > li .title a:not(:hover) {
+  text-decoration: none;
 }
-.publications-list li .authors {
+.publications-list > li .authors {
   grid-area: authors;
   font-style: italic;
   font-family: Lara, serif;
 }
-.publications-list li .year {
-  grid-area: year;
-  font-family: Lara, serif;
+.publications-list > li .periodical {
+  grid-area: periodical;
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+.publications-list ul.button-links {
+  --button-gap: 0.2em;
+  --button-icon-size: 16px;
+  grid-area: links;
+  align-items: end;
+  margin: 0;
 }
 
 .main-footer {
