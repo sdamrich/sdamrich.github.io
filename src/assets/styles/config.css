@@ -2,8 +2,11 @@
 @import url("../fonts/inter/inter.css");
 
 :root {
+  --content-max-width: 60rem;
+
   --serif-font-stack: Lora, serif;
   --sans-serif-font-stack: Inter, sans-serif;
+
   --color-a: rgb(194, 198, 197);
   --color-a-70: rgba(194, 198, 197, 0.6);
   --color-a-lighter: rgb(221, 226, 226);

@@ -7,7 +7,6 @@
 }
 
 html {
-  --content-max-width: 60rem;
   --content-padding: 2rem;
   --page-background: linear-gradient(
       to bottom,
