@@ -2,8 +2,10 @@
 @import url("../fonts/inter/inter.css");
 
 :root {
+  --serif-font-stack: Lora, serif;
+  --sans-serif-font-stack: Inter, sans-serif;
   --color-a: rgb(194, 198, 197);
-  --color-a-70: rgba(194, 198, 197, 0.7);
+  --color-a-70: rgba(194, 198, 197, 0.6);
   --color-a-lighter: rgb(221, 226, 226);
   --color-a-darker: rgb(170, 179, 181);
   --color-a-alt: rgb(180, 189, 188);
@@ -15,6 +17,4 @@
   --text-color-alt: rgb(15, 15, 15);
   --background-color: rgb(243, 249, 249);
   --background-color-alt: rgb(225, 235, 235);
-  --serif-font-stack: Lora, serif;
-  --sans-serif-font-stack: Inter, sans-serif;
 }

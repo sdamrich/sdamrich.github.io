@@ -44,6 +44,7 @@ h4,
 h5,
 h6 {
   font-family: var(--serif-font-stack);
+  text-wrap: balance;
   color: var(--text-color-alt);
 }
 h1 {
@@ -119,10 +120,8 @@ a.highlight:hover {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.main-nav .inner li a:hover,
 .main-nav .inner li a:focus {
-  background-color: var(--color-a-alt);
-}
-.main-nav .inner li a:hover {
   background-color: var(--color-a-darker);
 }
 
@@ -255,6 +254,13 @@ a.highlight:hover {
   padding: var(--content-padding);
   grid-area: content;
 }
+.main-content .inner .back {
+  margin-bottom: 0;
+  font-weight: bold;
+}
+.main-content .inner .back a:not(:hover) {
+  text-decoration: none;
+}
 .main-content .inner h1 {
   margin-bottom: 1em;
 }
@@ -359,6 +365,7 @@ a.highlight:hover {
 .teaching-list > li .title {
   grid-area: title;
   font-weight: bold;
+  text-wrap: balance;
 }
 .publications-list > li .title a:not(:hover),
 .teaching-list > li .title a:not(:hover) {
@@ -405,6 +412,7 @@ a.highlight:hover {
 @media (max-width: 767px) {
   .main-footer {
     font-size: 0.8em;
+    background-size: 100% auto;
   }
 }
 .main-footer * {
