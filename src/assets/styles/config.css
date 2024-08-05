@@ -1,3 +1,6 @@
+@import url("../fonts/lora/lora.css");
+@import url("../fonts/inter/inter.css");
+
 :root {
   --color-a: rgb(194, 198, 197);
   --color-a-70: rgba(194, 198, 197, 0.7);
@@ -12,4 +15,6 @@
   --text-color-alt: rgb(15, 15, 15);
   --background-color: rgb(243, 249, 249);
   --background-color-alt: rgb(225, 235, 235);
+  --serif-font-stack: Lora, serif;
+  --sans-serif-font-stack: Inter, sans-serif;
 }
