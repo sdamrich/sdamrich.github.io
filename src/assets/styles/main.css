@@ -194,6 +194,7 @@ a.highlight:hover {
   font-size: 1.2em;
 }
 .hero-banner .button-links {
+  --button-icon-size: 24px;
   padding-bottom: var(--content-padding);
 }
 @media (max-width: 767px) {
@@ -272,8 +273,8 @@ a.highlight:hover {
 .main-content .inner > ol {
   margin: 1em 0;
 }
-.main-content .inner ul,
-.main-content .inner ol {
+.main-content .inner ul:not(.button-links),
+.main-content .inner ol:not(.button-links) {
   margin-left: 2em;
 }
 .main-content .inner hr {
@@ -293,8 +294,8 @@ a.highlight:hover {
 
 .button-links {
   --_button-color: var(--button-color, var(--color-a-lighter));
-  --_button-gap: var(--button-gap, 0.5em);
-  --_button-icon-size: var(--button-icon-size, 24px);
+  --_button-gap: var(--button-gap, calc(var(--_button-icon-size) * 0.25));
+  --_button-icon-size: var(--button-icon-size, 20px);
   display: flex;
   gap: var(--_button-gap);
   grid-area: links;
@@ -323,32 +324,46 @@ a.highlight:hover {
   filter: invert(100%);
 }
 
-.publications-list {
+.publications-list,
+.teaching-list {
   line-height: 1.2;
 }
-.publications-list > li {
+.publications-list > li,
+.teaching-list > li {
   display: grid;
+  row-gap: 0.2em;
+  column-gap: 1em;
   position: relative;
+  margin: 0.5em 0;
+}
+.publications-list > li {
   grid-template-areas:
     "title title"
     "authors links"
     "periodical links";
   grid-template-columns: 1fr auto;
-  row-gap: 0.2em;
-  column-gap: 1em;
-  margin: 0.5em 0;
 }
-.publications-list > li::before {
+.teaching-list > li {
+  grid-template-areas:
+    "type type"
+    "title links"
+    "date links";
+  grid-template-columns: 1fr auto;
+}
+.publications-list > li::before,
+.teaching-list > li::before {
   content: "•";
   position: absolute;
   top: 0;
   left: -1em;
 }
-.publications-list > li .title {
+.publications-list > li .title,
+.teaching-list > li .title {
   grid-area: title;
   font-weight: bold;
 }
-.publications-list > li .title a:not(:hover) {
+.publications-list > li .title a:not(:hover),
+.teaching-list > li .title a:not(:hover) {
   text-decoration: none;
 }
 .publications-list > li .authors {
@@ -361,20 +376,38 @@ a.highlight:hover {
   font-size: 0.8em;
   opacity: 0.8;
 }
-.publications-list ul.button-links {
-  --button-gap: 0.2em;
+.teaching-list > li .date {
+  grid-area: date;
+  font-style: italic;
+  font-family: Lara, serif;
+}
+.teaching-list > li .type {
+  grid-area: type;
+  justify-self: start;
+  padding-top: 0.2em;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--text-color-alt);
+}
+.publications-list ul.button-links,
+.teaching-list ul.button-links {
   --button-icon-size: 16px;
   grid-area: links;
   align-items: end;
-  margin: 0;
 }
 
 .main-footer {
   background: url("../img/footer-bg.png") right top no-repeat;
   clear: both;
   text-align: center;
-  padding: 2em 0;
+  padding: 2em var(--content-padding);
   opacity: 0.7;
+}
+@media (max-width: 767px) {
+  .main-footer {
+    font-size: 0.8em;
+  }
 }
 .main-footer * {
   display: inline;
