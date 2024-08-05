@@ -56,10 +56,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (sections.length > 0 && $(".main-content .side-nav").length === 0) {
     const nav = h("nav");
-    const ul = h("ul");
+    const ol = h("ol");
 
     nav.classList.add("side-nav");
-    nav.append(ul);
+    nav.append(ol);
 
     for (const section of sections) {
       const li = h("li");
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
       a.href = "#" + section.id;
 
       li.append(a);
-      ul.append(li);
+      ol.append(li);
     }
 
     $(".main-content")[0].prepend(nav);

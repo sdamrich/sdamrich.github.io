@@ -44,7 +44,7 @@ h4,
 h5,
 h6 {
   font-family: var(--serif-font-stack);
-  text-wrap: balance;
+  text-wrap: pretty;
   color: var(--text-color-alt);
 }
 h1 {
@@ -244,11 +244,11 @@ a.highlight:hover {
     background: var(--page-background);
   }
 }
-.main-content .side-nav ul {
-  list-style: square;
-}
-.main-content .side-nav ul li {
+.main-content .side-nav ol li {
   margin: 0.5em 0;
+}
+.main-content .side-nav ol li a:not(:hover) {
+  text-decoration: none;
 }
 .main-content .inner {
   padding: var(--content-padding);
@@ -365,7 +365,7 @@ a.highlight:hover {
 .teaching-list > li .title {
   grid-area: title;
   font-weight: bold;
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 .publications-list > li .title a:not(:hover),
 .teaching-list > li .title a:not(:hover) {
@@ -424,9 +424,6 @@ a.highlight:hover {
 .main-footer nav li {
   margin-left: 0.5em;
 }
-.main-footer nav li a {
+.main-footer nav li a:not(:hover) {
   text-decoration: none;
-}
-.main-footer nav li a:hover {
-  text-decoration: underline;
 }
