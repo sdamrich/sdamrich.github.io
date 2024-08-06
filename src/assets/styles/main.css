@@ -148,7 +148,7 @@ a.highlight:hover {
     font-size: 0.9em;
   }
 }
-@media (min-width: 768px) {
+@media not (max-width: 767px) {
   .hero-banner .inner {
     grid-template-areas:
       "portrait ."
@@ -172,7 +172,7 @@ a.highlight:hover {
     height: 12em;
   }
 }
-@media (min-width: 768px) {
+@media not (max-width: 767px) {
   .hero-banner .portrait {
     margin: 0 2.5em;
   }
@@ -212,7 +212,7 @@ a.highlight:hover {
     grid-template-rows: auto 1fr;
   }
 }
-@media (min-width: 768px) {
+@media not (max-width: 767px) {
   .main-content {
     grid-template-areas:
       "content nav"
@@ -236,7 +236,7 @@ a.highlight:hover {
     font-size: 0.9em;
   }
 }
-@media (min-width: 768px) {
+@media not (max-width: 767px) {
   .main-content .side-nav {
     position: sticky;
     top: 4.5rem;
@@ -328,11 +328,11 @@ a.highlight:hover {
   filter: invert(100%);
 }
 
-.publications-list,
+.publication-list,
 .teaching-list {
   line-height: 1.2;
 }
-.publications-list > li,
+.publication-list > li,
 .teaching-list > li {
   display: grid;
   row-gap: 0.2em;
@@ -340,7 +340,7 @@ a.highlight:hover {
   position: relative;
   margin: 0.5em 0;
 }
-.publications-list > li {
+.publication-list > li {
   grid-template-areas:
     "title title"
     "authors links"
@@ -354,29 +354,30 @@ a.highlight:hover {
     "date links";
   grid-template-columns: 1fr auto;
 }
-.publications-list > li::before,
+.publication-list > li::before,
 .teaching-list > li::before {
   content: "•";
   position: absolute;
   top: 0;
   left: -1em;
 }
-.publications-list > li .title,
+.publication-list > li .title,
 .teaching-list > li .title {
   grid-area: title;
   font-weight: bold;
   text-wrap: pretty;
 }
-.publications-list > li .title a:not(:hover),
+.publication-list > li .title a:not(:hover),
 .teaching-list > li .title a:not(:hover) {
   text-decoration: none;
 }
-.publications-list > li .authors {
+.publication-list > li .authors {
   grid-area: authors;
   font-style: italic;
   font-family: Lara, serif;
+  text-wrap: pretty;
 }
-.publications-list > li .periodical {
+.publication-list > li .periodical {
   grid-area: periodical;
   font-size: 0.8em;
   opacity: 0.8;
@@ -385,6 +386,7 @@ a.highlight:hover {
   grid-area: date;
   font-style: italic;
   font-family: Lara, serif;
+  text-wrap: pretty;
 }
 .teaching-list > li .type {
   grid-area: type;
@@ -395,7 +397,7 @@ a.highlight:hover {
   text-transform: uppercase;
   color: var(--text-color-alt);
 }
-.publications-list ul.button-links,
+.publication-list ul.button-links,
 .teaching-list ul.button-links {
   --button-icon-size: 16px;
   grid-area: links;
