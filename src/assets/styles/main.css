@@ -295,13 +295,15 @@ a.highlight:hover {
   background-color: var(--color-a-alt);
   z-index: -1;
 }
+.main-content .inner img {
+  max-width: 100%;
+}
 
 .button-links {
   --_button-color: var(--button-color, var(--color-a-lighter));
-  --_button-gap: var(--button-gap, calc(var(--_button-icon-size) * 0.25));
   --_button-icon-size: var(--button-icon-size, 20px);
   display: flex;
-  gap: var(--_button-gap);
+  gap: calc(var(--_button-icon-size) * 0.25);
   grid-area: links;
   list-style: none;
 }
