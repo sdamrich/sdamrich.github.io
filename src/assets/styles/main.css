@@ -79,7 +79,7 @@ a.highlight:hover {
   top: 0;
   left: 0;
   width: 100%;
-  background: var(--color-a-70);
+  background: var(--color-a-60);
   backdrop-filter: blur(1rem);
   z-index: 1;
 }
@@ -126,8 +126,10 @@ a.highlight:hover {
 
 .hero-banner {
   border-bottom: 0.2em solid var(--color-a-alt);
-  background: linear-gradient(to bottom, var(--color-a), transparent 1em),
-    radial-gradient(ellipse at bottom, var(--color-a-alt), var(--color-a));
+  background:
+    linear-gradient(to bottom, var(--color-a), transparent 5em),
+    radial-gradient(ellipse at bottom, var(--color-a-alt), transparent),
+    url("../img/hero-bg.jpg") left center / cover;
   font-family: var(--serif-font-stack);
 }
 .hero-banner .inner {

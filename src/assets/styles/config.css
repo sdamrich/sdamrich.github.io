@@ -9,7 +9,7 @@
 
   /* Sync with <meta name="theme-color" /> */
   --color-a: rgb(194, 198, 197);
-  --color-a-70: rgba(194, 198, 197, 0.6);
+  --color-a-60: rgba(194, 198, 197, 0.6);
   --color-a-lighter: rgb(221, 226, 226);
   --color-a-darker: rgb(170, 179, 181);
   --color-a-alt: rgb(180, 189, 188);
