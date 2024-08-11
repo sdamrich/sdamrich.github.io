@@ -124,6 +124,12 @@ a.highlight:hover {
   background-color: var(--color-a-darker);
 }
 
+@keyframes hero-banner-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(-1em);
+  }
+}
 .hero-banner {
   border-bottom: 0.2em solid var(--color-a-alt);
   background:
@@ -131,6 +137,7 @@ a.highlight:hover {
     radial-gradient(ellipse at bottom, var(--color-a-alt), transparent),
     url("../img/hero-bg.jpg") left center / cover;
   font-family: var(--serif-font-stack);
+  animation: var(--entrance-animation-duration) backwards hero-banner-entrance;
 }
 .hero-banner .inner {
   display: grid;
@@ -163,10 +170,18 @@ a.highlight:hover {
     align-content: center;
   }
 }
+@keyframes portrait-entrance {
+  from {
+    opacity: 0;
+    transform: translateX(1em);
+  }
+}
 .hero-banner .portrait {
   grid-area: portrait;
   align-self: end;
   max-height: 18em;
+  animation: var(--entrance-animation-duration) backwards
+    calc(var(--entrance-animation-duration) / 3) portrait-entrance;
 }
 @media (max-width: 767px) {
   .hero-banner .portrait {
@@ -225,10 +240,18 @@ a.highlight:hover {
     max-width: 100%;
   }
 }
+@keyframes side-nav-entrance {
+  from {
+    opacity: 0;
+    transform: translateX(-0.5em);
+  }
+}
 .main-content .side-nav {
   grid-area: nav;
   padding: 0 var(--content-padding);
+  background: var(--background-color);
   line-height: 1.2;
+  animation: var(--entrance-animation-duration) backwards side-nav-entrance;
 }
 @media (max-width: 767px) {
   .main-content .side-nav {
@@ -243,7 +266,6 @@ a.highlight:hover {
     position: sticky;
     top: 4.5rem;
     border-left: 0.1em solid var(--color-a-alt);
-    background: var(--page-background);
   }
 }
 .main-content .side-nav ol li {

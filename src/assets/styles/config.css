@@ -7,6 +7,9 @@
   --serif-font-stack: Lora, serif;
   --sans-serif-font-stack: Inter, sans-serif;
 
+  /* Set to 0s to disable animation */
+  --entrance-animation-duration: 0.5s;
+
   /* Sync with <meta name="theme-color" /> */
   --color-a: rgb(194, 198, 197);
   --color-a-60: rgba(194, 198, 197, 0.6);
