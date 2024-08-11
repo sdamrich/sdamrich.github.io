@@ -127,7 +127,7 @@ a.highlight:hover {
 @keyframes hero-banner-entrance {
   from {
     opacity: 0;
-    transform: translateY(-1em);
+    transform: translateY(-0.5em);
   }
 }
 .hero-banner {
@@ -170,18 +170,10 @@ a.highlight:hover {
     align-content: center;
   }
 }
-@keyframes portrait-entrance {
-  from {
-    opacity: 0;
-    transform: translateX(1em);
-  }
-}
 .hero-banner .portrait {
   grid-area: portrait;
   align-self: end;
   max-height: 18em;
-  animation: var(--entrance-animation-duration) backwards
-    calc(var(--entrance-animation-duration) / 3) portrait-entrance;
 }
 @media (max-width: 767px) {
   .hero-banner .portrait {
