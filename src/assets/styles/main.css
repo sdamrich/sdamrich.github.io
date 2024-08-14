@@ -8,15 +8,17 @@
 
 html {
   --content-padding: 2rem;
-  --page-background: linear-gradient(
-      to bottom,
-      var(--color-a),
-      var(--color-a) 2.5rem,
-      var(--background-color) 2.5rem,
-      var(--background-color) 70%,
-      var(--background-color-alt)
-    )
-    fixed;
+  --page-background: url("../img/footer-bg.png") center calc(100% + 530px) /
+      auto 700px no-repeat,
+    linear-gradient(
+        to bottom,
+        var(--color-a),
+        var(--color-a) 2.5rem,
+        var(--background-color) 2.5rem,
+        var(--background-color) 70%,
+        var(--background-color-alt)
+      )
+      fixed;
   min-width: 320px;
   min-height: 100dvh;
   background: var(--page-background);
@@ -426,18 +428,17 @@ a.highlight:hover {
   clear: both;
 }
 .main-footer .inner {
-  background: url("../img/footer-bg.png") right top no-repeat;
   padding: 2em var(--content-padding);
   width: var(--content-max-width);
   margin: 0 auto;
   max-width: 100%;
   text-align: center;
+  text-shadow: var(--background-color) 0 0.1em;
   opacity: 0.7;
 }
 @media (max-width: 767px) {
   .main-footer .inner {
     font-size: 0.8em;
-    background-size: 100% auto;
   }
 }
 .main-footer .inner * {
@@ -448,6 +449,9 @@ a.highlight:hover {
 }
 .main-footer nav li {
   margin-left: 0.5em;
+}
+.main-footer nav li a:hover {
+  text-shadow: none;
 }
 .main-footer nav li a:not(:hover) {
   text-decoration: none;
