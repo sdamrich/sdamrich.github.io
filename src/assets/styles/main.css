@@ -128,8 +128,7 @@ a.highlight:hover {
 
 @keyframes hero-banner-entrance {
   from {
-    opacity: 0;
-    transform: translateY(-0.5em);
+    transform: translateY(-1em);
   }
 }
 .hero-banner {
@@ -145,6 +144,7 @@ a.highlight:hover {
   display: grid;
   position: relative;
   padding: 0 var(--content-padding);
+  padding-top: 1em;
   margin: 0 auto;
   width: var(--content-max-width);
   max-width: 100%;
