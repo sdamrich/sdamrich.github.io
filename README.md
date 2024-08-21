@@ -18,12 +18,19 @@ npm start
 ## Pages
 
 For each page there is a directory in the `/src` directory, together with an
-`index.html` file within. Nested pages can be represented by nested directories.
+`index.md` file within. Nested pages can be represented by nested directories.
+Titles will be extracted from the first level one header `#`.
 
-To create a new page, create a corresponding folder and use `template.html` to
-create an `index.html` within. All links and references are absolute, so there's
-no need to adjust them. Adjust the title within the `<title>` tag and place your
-content in `<!-- Content goes here -->`.
+To generate `index.html` for every `index.md` based on `/src/template.html`,
+execute:
+
+```
+npm run build
+```
+
+## Hero Banner
+
+Edit `/src/hero-banner.html` to customize the hero banner on the home page.
 
 ## Design Configuration
 
@@ -32,15 +39,9 @@ Colors and fonts can be configured in `/src/assets/styles/config.css`.
 ## Automatic Side Navigation Generation
 
 Pages can automatically generate a side navigation based on the level two
-headers `<h2>` available on the page.
+headers `##` available on the page.
 
 ![Side Navigation](./doc/side-navigation.png)
-
-To include a level two header in the side navigation, give them a unique id:
-
-```html
-<h2 id="dimensionality-reduction">Dimensionality Reduction</h2>
-```
 
 ## Custom Components Usage
 

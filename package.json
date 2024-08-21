@@ -5,10 +5,15 @@
   "private": true,
   "scripts": {
     "start": "serve ./src",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "build": "node ./ci/build.js"
   },
   "devDependencies": {
+    "marked": "^14.0.0",
+    "marked-gfm-heading-id": "^4.0.1",
+    "marked-smartypants": "^1.1.8",
     "prettier": "^3.3.3",
+    "recursive-readdir": "^2.2.3",
     "serve": "^14.2.3"
   }
 }
