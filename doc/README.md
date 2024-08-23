@@ -1,4 +1,4 @@
-# Personal Site
+# Documentation
 
 ## Local Development
 
