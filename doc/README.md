@@ -41,7 +41,7 @@ Colors and fonts can be configured in `/src/assets/styles/config.css`.
 Pages can automatically generate a side navigation based on the level two
 headers `##` available on the page.
 
-![Side Navigation](./doc/side-navigation.png)
+![Side Navigation](./side-navigation.png)
 
 ## Custom Components Usage
 
@@ -49,7 +49,7 @@ There are some common custom components that can be used within any page.
 
 ### Button Links
 
-![Button Links](./doc/button-links.png)
+![Button Links](./button-links.png)
 
 ```html
 <ul class="button-links">
@@ -72,7 +72,7 @@ put in `/src/assets/img/icons`. You can
 
 ### Publication List
 
-![Publication List](./doc/publication-list.png)
+![Publication List](./publication-list.png)
 
 ```html
 <ul class="publication-list">
@@ -125,7 +125,7 @@ put in `/src/assets/img/icons`. You can
 
 ### Teaching List
 
-![Teaching List](./doc/teaching-list.png)
+![Teaching List](./teaching-list.png)
 
 ```html
 <ul class="teaching-list">
